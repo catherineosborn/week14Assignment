@@ -1,32 +1,23 @@
-import React from "react";
-import ReactStars from "react-rating-stars-component";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
 
+export default function Stars() {
+  const [value, setValue] = React.useState();
 
-export default function Stars(props) {
-    const [hover, setHover] = React.useState(null);
-    return (
-        <div className="stars">
-            {[...Array(5)].map((star, index) => {
-                const ratingValue = index + 1;
-                return (
-                    <label>
-                        <input 
-                          type="radio"
-                          name="star"
-                          value={ratingValue}
-                          onClick={() => props.handleClick(ratingValue)}
-                        />
-                        <ReactStars 
-                          className="star"
-                          color={
-                            ratingValue <= (hover || props.stars) ? "#ffea07" : "#161617"
-                          }
-                          onMouseEnter={() => setHover(ratingValue)}
-                          onMouseLeave={() => setHover(null)}
-                        />
-                    </label>
-                );
-            })}
-        </div>
-    );
+  return (
+    <Box
+      sx={{
+        '& > legend': { mt: 2 },
+      }}
+    >
+      <Rating
+        name="simple-controlled"
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      />
+    </Box>
+  );
 }

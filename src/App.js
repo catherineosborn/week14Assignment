@@ -1,6 +1,8 @@
+import React from 'react';
 import './App.css';
 import movieList from "./components/movieList";
 import Movie from "./components/movie";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (

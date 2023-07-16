@@ -7,8 +7,14 @@ import oceans8 from "../images/oceans8.jpg";
 import oceans11 from "../images/oceans11.jpg";
 import oceans12 from "../images/oceans12.jpg";
 import oceans13 from "../images/oceans13.jpg";
+import React from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Movie from "./movie";
 
-export default [
+export default function MovieList(props) {
+
+    const [movieData, setMovieData] = React.useState([
     {
         id: 1,
         title: "10 Things I Hate About You",
@@ -117,4 +123,20 @@ export default [
         imdb: "https://www.imdb.com/title/tt0496806/?ref_=tt_sims_tt_i_1",
         rottentomatoes: "https://www.rottentomatoes.com/m/oceans_thirteen",
     },
-];
+    ]);
+    return (
+        movieData.map((movie, index) => {
+            <Movie
+                title={movie.title}
+                synopsis={movie.synopsis}
+                year={movie.year}
+                director={movie.director}
+                writer={movie.writer}
+                cast={movie.cast}
+                image={movie.image}
+                imdb={movie.imdb}
+                rottentomatoes={movie.rottentomatoes}
+            />
+        })
+      );
+}  

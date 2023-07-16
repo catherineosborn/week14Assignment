@@ -4,6 +4,7 @@ import Stars from "./stars";
 import ReviewForm from "./reviewForm";
 import ReviewList from "./reviewList";
 import Button from "react-bootstrap/button";
+import MovieList from "./movieList";
 
 export default function Movie(props) {
     const [reviewData, setReviewData] = React.useState([

@@ -48,7 +48,6 @@ export default function Review(props) {
           <Stars handleClick={handleClick} stars={starRating} />
           <button className="form-button">Post Review</button>
         </form>
-        <ReviewList reviews={props.reviewData} />
       </div>
     );
   }  
