@@ -13,18 +13,14 @@ export default function Review(props) {
       props.setReviewData((prevData) => [
         ...prevData,
         {
-          username: user.current.value,
+          username: username.current.value,
           review: review.current.value,
           rating: !starRating ? "0🌟" : starRating + "🌟",
         },
       ]);
-  
-      user.current.value = "";
+    
+      username.current.value = "";
       review.current.value = "";
-    }
-  
-    function handleClick(newRating) {
-      setStarRating(newRating);
     }
   
     return (
@@ -45,7 +41,7 @@ export default function Review(props) {
             value={props.reviewData.review}
             required
           />
-          <Stars handleClick={handleClick} stars={starRating} />
+          <Stars stars={starRating} interactive={false}/>
           <button className="form-button">Post Review</button>
         </form>
       </div>

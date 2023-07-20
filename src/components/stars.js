@@ -1,23 +1,20 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Rating from '@mui/material/Rating';
+import React from "react";
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
 
-export default function Stars() {
-  const [value, setValue] = React.useState();
+export default function Stars(props) {
+  const { handleRatingChange, stars } = props; 
 
   return (
-    <Box
-      sx={{
-        '& > legend': { mt: 2 },
-      }}
-    >
+    <Box sx={{ "& > legend": { mt: 2 } }}>
       <Rating
         name="simple-controlled"
-        value={value}
+        value={props.stars} 
         onChange={(event, newValue) => {
-          setValue(newValue);
+          props.setStarRating(newValue); 
         }}
       />
     </Box>
   );
 }
+

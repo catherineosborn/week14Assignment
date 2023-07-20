@@ -2,16 +2,28 @@
   text-align: center;
 }
 
-.card {
+.movie-card-container {
   display: flex;
   flex-wrap: wrap;
-  width: 30%;
+  justify-content: space-around;
 }
 
-.movie-card {
-  justify-content: space-between;
-  align-items: center;
+.card {
+  width: calc(30% - 20px); 
+  margin: 10px; 
+  background-color: #000000; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+  color: rgb(255, 255, 255);
 }
+
+/* Media query for smaller screens */
+@media (max-width: 900px) {
+  .card {
+    width: calc(60% - 20px);
+  }
+}
+
 
 .row {
   background-color: #335c67;
@@ -32,7 +44,7 @@
 }
 
 .review-form-popup-content {
-  background-color: #fefefe;
+  background-color: rgb(134, 141, 211);
   border-radius: 4px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
