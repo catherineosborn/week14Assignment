@@ -16,7 +16,7 @@ export default function Movie(props) {
   }
 
   return (
-    <Card className="card">
+    <Card bg="black" text="white" className="card">
       <Card.Img variant="top" src={props.image} className="movie-image" />
       <Card.Body className="movie-card-container">
         <Card.Title className="movie-title">{props.title}</Card.Title>
@@ -44,6 +44,5 @@ export default function Movie(props) {
         </div>
       )}
     </Card>
-  );
-  
+  );  
 }
